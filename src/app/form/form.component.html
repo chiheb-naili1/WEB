@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<form [formGroup]="myForm" (ngSubmit)="save()">
+    <div class="container">
+        <div class="col-3">
+            <label>firstname</label>
+            <input class="form-control" type="text" name="firstname" formControlName="firstname">
+            <div *ngIf="firstname!.touched && firstname!.invalid">
+
+                <small class="text-danger" *ngIf="firstname?.errors?.['required']">Firstname is required</small>
+                <small class="text-danger" *ngIf="firstname!.errors?.['minlength']">il faut min 3 car</small>
+            </div>
+            <label>lastname</label>
+            <input class="form-control" type="text" name="lastname" formControlName="lastname">
+            <div *ngIf="lastname!.touched && lastname!.invalid">
+
+                <small class="text-danger" *ngIf="lastname?.errors?.['required']">lastname is required</small>
+                <small class="text-danger" *ngIf="lastname!.errors?.['minlength']">il faut min 3 car</small>
+            </div>
+            <label>phone</label>
+            <input class="form-control" type="number" name="phone" formControlName="phone">
+            <div *ngIf="phone!.touched && phone!.invalid">
+
+                <small class="text-danger" *ngIf="phone?.errors?.['required']">phone is required</small>
+                <small class="text-danger" *ngIf="phone!.errors?.['pattern']">invalid phone</small>
+
+            </div>
+            <label>Email</label>
+            <input class="form-control" type="email" name="email" formControlName="email">
+            <div *ngIf="email!.touched && email!.invalid">
+
+                <small class="text-danger" *ngIf="email?.errors?.['required']">email is required</small>
+                <small class="text-danger" *ngIf="email!.errors?.['email']">invalid email</small>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-danger">register</button>
+    </div>
+</form>

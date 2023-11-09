@@ -1,0 +1,35 @@
+<h1>{{age}}</h1>
+<h1>{{ name }}</h1>
+
+
+
+    <h2>{{message}}</h2>
+    <button (click)="changermsg()">changer le message</button>
+
+    <p>exp ngif</p>
+
+    <div *ngIf="afficher">
+        <p>cette element s'affiche si var est vrai 1</p>
+    </div>
+    
+    <div *ngIf="afficheElement">
+        <p>cette element s'affiche si var est vrai 2</p>
+    </div>
+
+    <p>exp ngfor</p>
+
+    <ul>
+      <li *ngFor="let i of fruits">{{i}}</li>
+    </ul>
+
+    <div *ngFor="let x of produits; let i = index">
+      <div class="card">
+          <div class="info">
+              <h3>{{ x.nom }}</h3>
+              <p>Prix : {{ x.prix | currency:'DT' }}</p>
+              <p>Stock : {{ x.stock }}</p>
+          </div>
+      </div>
+  </div>
+
+  

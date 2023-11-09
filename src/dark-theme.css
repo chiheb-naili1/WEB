@@ -1,0 +1,5 @@
+/* Dark theme CSS styles */
+.dark-theme {
+    --primary-background-color: #333333; /* Dark theme background color */
+    --primary-text-color: #ffffff; /* Dark theme text color */
+  }

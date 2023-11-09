@@ -1,0 +1,5 @@
+/* Light theme CSS styles */
+.light-theme {
+    --primary-background-color: #ffffff; /* Light theme background color */
+    --primary-text-color: #000000; /* Light theme text color */
+  }
